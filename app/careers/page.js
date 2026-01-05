@@ -27,32 +27,38 @@ const CareersPage = () => {
     {
       icon: Wallet,
       title: 'Pension Scheme',
-      description: 'We contribute to your future with a comprehensive pension scheme to help you plan for retirement.'
+      description: 'We contribute to your future with a comprehensive pension scheme to help you plan for retirement.',
+      image: '/benefits/pension-scheme.jpeg'
     },
     {
       icon: Heart,
       title: 'Wellness Day',
-      description: 'Take time for yourself with dedicated wellness days to focus on your mental and physical health.'
+      description: 'Take time for yourself with dedicated wellness days to focus on your mental and physical health.',
+      image: '/benefits/wellness-day.jpeg'
     },
     {
       icon: Coffee,
       title: 'Free Lunch',
-      description: 'Enjoy complimentary lunch every day, keeping you fueled and focused throughout the workday.'
+      description: 'Enjoy complimentary lunch every day, keeping you fueled and focused throughout the workday.',
+      image: '/benefits/free-lunch.jpeg'
     },
     {
       icon: Cake,
       title: 'Birthdays Off',
-      description: 'Celebrate your special day! We give you your birthday off to spend time with loved ones.'
+      description: 'Celebrate your special day! We give you your birthday off to spend time with loved ones.',
+      image: '/benefits/birthdays-off.jpeg'
     },
     {
       icon: Users,
       title: 'Regular Socials',
-      description: 'Build connections with colleagues through regular team events, outings, and social gatherings.'
+      description: 'Build connections with colleagues through regular team events, outings, and social gatherings.',
+      image: '/benefits/regular-socials.jpeg'
     },
     {
       icon: Gift,
       title: 'Team Bonding',
-      description: 'Participate in team building activities designed to strengthen relationships and boost morale.'
+      description: 'Participate in team building activities designed to strengthen relationships and boost morale.',
+      image: '/benefits/team-bonding.jpeg'
     }
   ];
 
@@ -118,7 +124,37 @@ const CareersPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Remove the benefits.map section */}
+            {benefits.map((benefit, index) => {
+              const IconComponent = benefit.icon;
+              return (
+                <div key={index} className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all overflow-hidden group relative h-64">
+                  {/* Background Image */}
+                  <div className="absolute inset-0">
+                    <Image
+                      src={benefit.image}
+                      alt={benefit.title}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/40"></div>
+                  </div>
+                  
+                  {/* Content Overlay - Hidden by default, shown on hover */}
+                  <div className="absolute inset-0 bg-white/95 backdrop-blur-sm p-6 flex flex-col justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+                      <IconComponent className="w-6 h-6 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2">{benefit.title}</h3>
+                    <p className="text-muted-foreground">{benefit.description}</p>
+                  </div>
+                  
+                  {/* Title visible without hover */}
+                  <div className="absolute bottom-4 left-4 group-hover:opacity-0 transition-opacity duration-300">
+                    <h3 className="text-xl font-semibold text-white drop-shadow-lg">{benefit.title}</h3>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

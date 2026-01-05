@@ -211,6 +211,139 @@ const ReferencesPage = () => {
   </div>
 </section>
 
+      {/* Special Moments */}
+      <section className="py-20 bg-muted/30">
+        <div className="container-custom">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Special Moments</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Celebrating milestones, achievements, and memorable experiences with our team and clients
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Moment 1 - Breast Cancer Achievement */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all">
+              <div className="relative h-64">
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  poster="/special-moments/breast-cancer-poster.jpg"
+                >
+                  <source src="/special-moments/breast-cancer.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="text-2xl">🎗️</div>
+                  <h3 className="text-xl font-semibold">Breast Cancer Achievement</h3>
+                </div>
+                <p className="text-muted-foreground mb-3">
+                  Supporting breast cancer awareness and contributing to the fight against breast cancer through our Pink October initiative. Together, we stand strong in raising awareness and supporting those affected by this disease.
+                </p>
+                <div className="text-sm text-primary font-medium">October 2025</div>
+              </div>
+            </div>
+
+            {/* Moment 2 */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all">
+              <div className="relative h-64">
+                <Image
+                  src="/special-moments/moment2.jpeg"
+                  alt="Special Moment 2"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Client Partnership</h3>
+                <p className="text-muted-foreground mb-3">
+                  Strengthening relationships with our valued clients through successful project completions and ongoing support.
+                </p>
+                <div className="text-sm text-primary font-medium">February 2024</div>
+              </div>
+            </div>
+
+            {/* Moment 3 */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all">
+              <div className="relative h-64">
+                <Image
+                  src="/special-moments/moment3.jpeg"
+                  alt="Special Moment 3"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Innovation Milestone</h3>
+                <p className="text-muted-foreground mb-3">
+                  Reaching new heights in technological advancement and engineering solutions for our industrial partners.
+                </p>
+                <div className="text-sm text-primary font-medium">January 2024</div>
+              </div>
+            </div>
+
+            {/* Moment 4 */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all">
+              <div className="relative h-64">
+                <Image
+                  src="/special-moments/moment4.jpeg"
+                  alt="Special Moment 4"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Community Impact</h3>
+                <p className="text-muted-foreground mb-3">
+                  Making a positive difference in local communities through our sustainable engineering solutions and social initiatives.
+                </p>
+                <div className="text-sm text-primary font-medium">December 2023</div>
+              </div>
+            </div>
+
+            {/* Moment 5 */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all">
+              <div className="relative h-64">
+                <Image
+                  src="/special-moments/moment5.jpeg"
+                  alt="Special Moment 5"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Training Excellence</h3>
+                <p className="text-muted-foreground mb-3">
+                  Empowering our team through continuous learning and professional development programs.
+                </p>
+                <div className="text-sm text-primary font-medium">November 2023</div>
+              </div>
+            </div>
+
+            {/* Moment 6 */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all">
+              <div className="relative h-64">
+                <Image
+                  src="/special-moments/moment6.jpeg"
+                  alt="Special Moment 6"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Project Success</h3>
+                <p className="text-muted-foreground mb-3">
+                  Celebrating the successful completion of major infrastructure projects across Africa.
+                </p>
+                <div className="text-sm text-primary font-medium">October 2023</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Galaxy of Our Customers */}
       <section className="py-20 bg-muted/30">
         <div className="container-custom">

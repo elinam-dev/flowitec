@@ -130,49 +130,12 @@ const IndustriesPage = () => {
         </section>
       )}
 
-      {/* Filter Toolbar */}
-      <section className="py-8 bg-muted/30 border-b sticky top-20 z-40">
-        <div className="container-custom">
-          <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Filter className="w-5 h-5 text-muted-foreground" />
-              <span className="font-medium">Filter by Industry Category:</span>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => setSelectedCategory('all')}
-                className={`px-4 py-2 rounded-lg font-medium transition-all ${
-                  selectedCategory === 'all'
-                    ? 'bg-primary text-white'
-                    : 'bg-white hover:bg-gray-50 border'
-                }`}
-              >
-                All Industries
-              </button>
-              {categories.map(category => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all ${
-                    selectedCategory === category
-                      ? 'bg-primary text-white'
-                      : 'bg-white hover:bg-gray-50 border'
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Industries Grid */}
       <section className="py-20 bg-background">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              {selectedCategory === 'all' ? 'All Industries' : selectedCategory}
+              All Industries
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Specialized solutions for diverse industries across Africa
@@ -180,7 +143,7 @@ const IndustriesPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredIndustries.map(industry => (
+            {industries.map(industry => (
               <Link
                 key={industry.id}
                 href={`/industries/${industry.slug}`}
@@ -225,7 +188,7 @@ const IndustriesPage = () => {
             ))}
           </div>
 
-          {filteredIndustries.length === 0 && (
+          {industries.length === 0 && (
             <div className="text-center py-12">
               <p className="text-xl text-muted-foreground mb-4">
                 No industries found in this category
