@@ -93,12 +93,12 @@ const ApplicationDetailPage = ({ params }) => {
           <p className="text-lg mb-8 opacity-90">
             Talk to our applications engineers for expert guidance
           </p>
-          <Link
-            href="/contact"
+          <a
+            href="mailto:godwin.asamoah@flowitec.com"
             className="btn bg-white text-primary hover:bg-gray-100 text-lg px-8 py-4"
           >
             Contact Engineering Team
-          </Link>
+          </a>
         </div>
       </section>
     </div>
