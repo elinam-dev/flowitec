@@ -228,7 +228,6 @@ const ReferencesPage = () => {
                 <video
                   className="w-full h-full object-cover"
                   controls
-                  poster="/special-moments/breast-cancer-poster.jpg"
                 >
                   <source src="/special-moments/breast-cancer.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
@@ -246,22 +245,37 @@ const ReferencesPage = () => {
               </div>
             </div>
 
-            {/* Moment 2 */}
+            {/* Moment 2 - Employment Recognition */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all">
-              <div className="relative h-64">
+              <div className="relative h-64 overflow-hidden">
                 <Image
-                  src="/special-moments/moment2.jpeg"
-                  alt="Special Moment 2"
+                  src="/gallery/gallery15.jpeg"
+                  alt="Employment Recognition"
                   fill
-                  className="object-cover"
+                  className="object-cover animate-pulse"
+                  style={{
+                    animation: 'fadeInOut 4s infinite alternate'
+                  }}
+                />
+                <Image
+                  src="/gallery/gallery16.jpeg"
+                  alt="Employment Recognition"
+                  fill
+                  className="object-cover absolute inset-0"
+                  style={{
+                    animation: 'fadeInOut 4s infinite alternate-reverse'
+                  }}
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Client Partnership</h3>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="text-2xl">🏆</div>
+                  <h3 className="text-xl font-semibold">Employment Recognition</h3>
+                </div>
                 <p className="text-muted-foreground mb-3">
-                  Strengthening relationships with our valued clients through successful project completions and ongoing support.
+                  Celebrating outstanding employee achievements and recognizing exceptional contributions to our company's success. Honoring dedication, innovation, and excellence in our workplace.
                 </p>
-                <div className="text-sm text-primary font-medium">February 2024</div>
+                <div className="text-sm text-primary font-medium">May 2025</div>
               </div>
             </div>
 

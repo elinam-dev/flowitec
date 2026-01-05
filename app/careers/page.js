@@ -38,7 +38,7 @@ const CareersPage = () => {
     },
     {
       icon: Coffee,
-      title: 'Free Lunch',
+      title: 'Daily Office Lunch',
       description: 'Enjoy complimentary lunch every day, keeping you fueled and focused throughout the workday.',
       image: '/benefits/free-lunch.jpeg'
     },
@@ -59,6 +59,12 @@ const CareersPage = () => {
       title: 'Team Bonding',
       description: 'Participate in team building activities designed to strengthen relationships and boost morale.',
       image: '/benefits/team-bonding.jpeg'
+    },
+    {
+      icon: Heart,
+      title: 'Healthcare Benefits',
+      description: 'Comprehensive healthcare coverage for you and your family, ensuring peace of mind and well-being.',
+      image: '/benefits/healthcare-benefits.jpeg'
     }
   ];
 
@@ -192,7 +198,7 @@ const CareersPage = () => {
             <div className="relative h-[400px] rounded-xl overflow-hidden shadow-xl">
               {/* Life at Flowitec Image - Change this URL to your desired image */}
               <Image
-                src="/mining-1.jpg"
+                src="/gallery/gallery17.jpeg"
                 alt="Life at Flowitec"
                 fill
                 className="object-cover"

@@ -187,24 +187,24 @@ export default function Home() {
           </div>
           {/* Scrolling Partners */}
           <div className="relative">
-            <div className="flex animate-scroll-left">
+            <div className="flex animate-scroll-left" style={{width: '200%'}}>
               {/* First set of logos */}
               {PARTNERS.map((partner) => (
-                <div key={partner.id} className={`flex-shrink-0 mx-4 h-48 flex items-center justify-center hover:opacity-100 transition-opacity bg-white rounded-lg p-4 relative overflow-hidden group animate-[glow_3s_ease-in-out_infinite] ${partner.name === 'Franklin Electric' || partner.name === 'Fluimac' ? 'w-80' : partner.name === 'C.R.I. Pumps' ? 'w-72' : partner.name === 'SAER Elettropompe' ? 'w-50' : 'w-64'}`}>
+                <div key={partner.id} className={`flex-shrink-0 mx-4 h-48 flex items-center justify-center hover:opacity-100 transition-opacity bg-white rounded-lg p-4 relative overflow-hidden group animate-[glow_3s_ease-in-out_infinite] ${partner.name === 'Franklin Electric' || partner.name === 'Fluimac' ? 'w-80' : partner.name === 'C.R.I. Pumps' ? 'w-72' : partner.name === 'SAER Elettropompe' ? 'w-50' : partner.name === 'Ecodepur' ? 'w-72' : 'w-64'}`}>
                   <img 
                     src={partner.logo} 
                     alt={partner.name}
-                    className={`h-24 w-auto object-contain relative z-10 animate-[pulse_2s_ease-in-out_infinite] ${partner.name === 'Bray' ? 'scale-125' : partner.name === 'Meson Group' ? 'scale-125' : partner.name === 'Franklin Electric' ? 'scale-[3]' : partner.name === 'C.R.I. Pumps' ? 'scale-[3]' : partner.name === 'Fluimac' ? 'scale-[2.5]' : ''}`}
+                    className={`h-24 w-auto object-contain relative z-10 animate-[pulse_2s_ease-in-out_infinite] ${partner.name === 'Bray' ? 'scale-125' : partner.name === 'Meson Group' ? 'scale-125' : partner.name === 'Franklin Electric' ? 'scale-[3]' : partner.name === 'C.R.I. Pumps' ? 'scale-[3]' : partner.name === 'Fluimac' ? 'scale-[2.5]' : partner.name === 'Pioneer Pump' ? 'scale-[1.75]' : partner.name === 'Ecodepur' ? 'scale-[4]' : ''}`}
                   />
                 </div>
               ))}
               {/* Duplicate set for seamless loop */}
               {PARTNERS.map((partner) => (
-                <div key={`dup-${partner.id}`} className={`flex-shrink-0 mx-4 h-48 flex items-center justify-center hover:opacity-100 transition-opacity bg-white rounded-lg p-4 relative overflow-hidden group animate-[glow_3s_ease-in-out_infinite] ${partner.name === 'Franklin Electric' || partner.name === 'Fluimac' ? 'w-80' : partner.name === 'C.R.I. Pumps' ? 'w-72' : partner.name === 'SAER Elettropompe' ? 'w-50' : 'w-64'}`}>
+                <div key={`dup-${partner.id}`} className={`flex-shrink-0 mx-4 h-48 flex items-center justify-center hover:opacity-100 transition-opacity bg-white rounded-lg p-4 relative overflow-hidden group animate-[glow_3s_ease-in-out_infinite] ${partner.name === 'Franklin Electric' || partner.name === 'Fluimac' ? 'w-80' : partner.name === 'C.R.I. Pumps' ? 'w-72' : partner.name === 'SAER Elettropompe' ? 'w-50' : partner.name === 'Ecodepur' ? 'w-72' : 'w-64'}`}>
                   <img 
                     src={partner.logo} 
                     alt={partner.name}
-                    className={`h-24 w-auto object-contain relative z-10 animate-[pulse_2s_ease-in-out_infinite] ${partner.name === 'Bray' ? 'scale-125' : partner.name === 'Meson Group' ? 'scale-125' : partner.name === 'Franklin Electric' ? 'scale-[3]' : partner.name === 'C.R.I. Pumps' ? 'scale-[3]' : partner.name === 'Fluimac' ? 'scale-[2.5]' : ''}`}
+                    className={`h-24 w-auto object-contain relative z-10 animate-[pulse_2s_ease-in-out_infinite] ${partner.name === 'Bray' ? 'scale-125' : partner.name === 'Meson Group' ? 'scale-125' : partner.name === 'Franklin Electric' ? 'scale-[3]' : partner.name === 'C.R.I. Pumps' ? 'scale-[3]' : partner.name === 'Fluimac' ? 'scale-[2.5]' : partner.name === 'Pioneer Pump' ? 'scale-[1.75]' : partner.name === 'Ecodepur' ? 'scale-[4]' : ''}`}
                   />
                 </div>
               ))}
