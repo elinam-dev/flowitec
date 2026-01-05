@@ -22,8 +22,29 @@ const Navigation = () => {
         { name: 'Spare Parts', href: '/products?category=spare-parts' },
       ]
     },
-    { name: 'Applications', href: '/applications' },
-    { name: 'Industries', href: '/industries' },
+    {
+      name: 'Applications',
+      href: '/applications',
+      dropdown: [
+        { name: 'Clean Water', href: '/applications/clean-water' },
+        { name: 'Waste Water', href: '/applications/waste-water' },
+        { name: 'Slurry', href: '/applications/slurry' },
+        { name: 'Chemical', href: '/applications/chemical' },
+        { name: 'Mine Water', href: '/applications/mine-water' },
+        { name: 'Viscous Fluid', href: '/applications/viscous-fluid' },
+      ]
+    },
+    {
+      name: 'Industries',
+      href: '/industries',
+      dropdown: [
+        { name: 'Mining', href: '/industries/mining' },
+        { name: 'Agriculture', href: '/industries/agriculture' },
+        { name: 'Water Treatment', href: '/industries/water-treatment' },
+        { name: 'Petrochemical', href: '/industries/petrochemical' },
+        { name: 'Municipal', href: '/industries/municipal' },
+      ]
+    },
     { name: 'Services', href: '/services' },
     { name: 'References', href: '/references' },
     { name: 'Careers', href: '/careers' },
@@ -39,7 +60,7 @@ const Navigation = () => {
             <img 
               src="/flowitec-logo.png" 
               alt="Flowitec" 
-              className="h-[200px] w-auto object-contain"
+              className="h-[300px] w-auto object-contain"
             />
           </Link>
 

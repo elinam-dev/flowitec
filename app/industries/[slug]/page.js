@@ -2,35 +2,29 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeft, Download, MapPin, Phone, Mail } from 'lucide-react';
 import ProductCard from '@/components/ProductCard';
-import { BRANCHES, INDUSTRIES } from '@/lib/mockData';
+import { BRANCHES } from '@/lib/mockData';
+import { INDUSTRIES_CMS } from '@/lib/industriesData';
 import { ALL_PRODUCTS } from '@/lib/productsData';
 
 export async function generateStaticParams() {
-  return INDUSTRIES.map((industry) => ({
+  return INDUSTRIES_CMS.map((industry) => ({
     slug: industry.slug,
   }));
 }
 
 function getIndustryData(slug) {
-  // Handle both old and new slug formats
-  const industry = INDUSTRIES.find(ind => 
-    ind.slug === slug || 
-    ind.id === slug ||
-    ind.slug === slug.replace('-', '') ||
-    (slug === 'mining-minerals-metals' && ind.id === 'mining') ||
-    (slug === 'agriculture-irrigation' && ind.id === 'agriculture') ||
-    (slug === 'petrochemical-refinery' && ind.id === 'petrochemical') ||
-    (slug === 'food-and-beverage' && ind.id === 'food-beverage') ||
-    (slug === 'power-plant' && ind.id === 'power-generation') ||
-    (slug === 'pharmaceuticals' && ind.id === 'pharmaceutical') ||
-    (slug === 'cement-and-textile' && ind.id === 'cement-textile') ||
-    (slug === 'paper-pulp-packaging' && ind.id === 'paper-pulp')
-  );
+  const industry = INDUSTRIES_CMS.find(ind => ind.slug === slug);
   
   if (!industry) return null;
   
   const products = ALL_PRODUCTS.filter(product => 
-    product.industries && product.industries.includes(industry.id)
+    product.industries && (
+      product.industries.includes(industry.id) ||
+      product.industries.includes(industry.slug) ||
+      (industry.recommended_products && industry.recommended_products.some(rec => 
+        product.id === rec || product.slug === rec
+      ))
+    )
   );
   
   return { industry, products };
@@ -80,7 +74,7 @@ const IndustryDetailPage = ({ params }) => {
           </Link>
           <div className="text-6xl mb-4">{industry.icon}</div>
           <h1 className="text-5xl font-bold mb-4">{industry.title}</h1>
-          <p className="text-xl text-white/90 max-w-2xl">{industry.overview}</p>
+          <p className="text-xl text-white/90 max-w-2xl">{industry.short_description}</p>
         </div>
       </section>
 
@@ -88,21 +82,9 @@ const IndustryDetailPage = ({ params }) => {
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none">
-              <h2 className="text-3xl font-bold mb-6">Industry Overview</h2>
-              <p className="text-lg mb-8">{industry.overview}</p>
-              
-              <h3 className="text-2xl font-bold mb-4">Key Challenges</h3>
-              <ul className="space-y-2 mb-8">
-                {industry.challenges.map((challenge, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="text-primary font-bold">•</span>
-                    <span>{challenge}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <h3 className="text-2xl font-bold mb-4">Our Solutions</h3>
-              <p className="text-lg">{industry.solutions}</p>
+              <div 
+                dangerouslySetInnerHTML={{ __html: industry.long_description || industry.short_description }}
+              />
             </div>
           </div>
         </div>
