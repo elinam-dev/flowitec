@@ -54,13 +54,13 @@ const Navigation = () => {
   return (
     <nav className="bg-white shadow-md border-b border-gray-200">
       <div className="max-w-[1600px] mx-auto px-4 lg:px-8">
-        <div className="flex justify-between items-center h-24 lg:h-28">
+        <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo - Large and fits within header */}
           <Link href="/" className="flex items-center flex-shrink-0">
             <img 
               src="/flowitec-logo.png" 
               alt="Flowitec" 
-              className="h-[300px] w-auto object-contain"
+              className="h-[180px] w-auto object-contain"
             />
           </Link>
 
