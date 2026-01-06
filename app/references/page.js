@@ -17,11 +17,7 @@ const Gallery = [
 '/gallery/gallery13.jpg',
 '/gallery/gallery17.jpeg',
 '/gallery/gallery19.jpeg',
-'/gallery/gallery21.jpeg',
-'/gallery/gallery23.jpeg',
-'/gallery/gallery24.jpeg',
-'/gallery/gallery25.jpeg',
-'/gallery/gallery26.jpeg'
+'/gallery/gallery21.jpeg'
 ];
 
 const ReferencesPage = () => {
