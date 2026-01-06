@@ -194,7 +194,7 @@ const AboutContent = () => {
             </div>
             <div className="relative h-[500px] rounded-lg overflow-hidden shadow-2xl">
               <Image
-                src="/mining-1.jpg"
+                src="/gallery/gallery18.jpeg"
                 alt="Flowitec team"
                 fill
                 className="object-cover"

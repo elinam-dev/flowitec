@@ -15,10 +15,7 @@ const Gallery = [
 '/gallery/gallery11.jpg',
 '/gallery/gallery12.jpg',
 '/gallery/gallery13.jpg',
-'/gallery/gallery15.jpeg',
-'/gallery/gallery16.jpeg',
 '/gallery/gallery17.jpeg',
-'/gallery/gallery18.jpeg',
 '/gallery/gallery19.jpeg',
 '/gallery/gallery21.jpeg',
 '/gallery/gallery23.jpeg',
@@ -252,9 +249,9 @@ const ReferencesPage = () => {
                   src="/gallery/gallery15.jpeg"
                   alt="Employment Recognition"
                   fill
-                  className="object-cover animate-pulse"
+                  className="object-cover absolute inset-0"
                   style={{
-                    animation: 'fadeInOut 4s infinite alternate'
+                    animation: 'employmentFade 8s infinite 0s'
                   }}
                 />
                 <Image
@@ -263,7 +260,7 @@ const ReferencesPage = () => {
                   fill
                   className="object-cover absolute inset-0"
                   style={{
-                    animation: 'fadeInOut 4s infinite alternate-reverse'
+                    animation: 'employmentFade 8s infinite 4s'
                   }}
                 />
               </div>
@@ -279,22 +276,109 @@ const ReferencesPage = () => {
               </div>
             </div>
 
-            {/* Moment 3 */}
+            {/* Moment 3 - Scenic Trip */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all">
-              <div className="relative h-64">
+              <div className="relative h-64 overflow-hidden">
                 <Image
-                  src="/special-moments/moment3.jpeg"
-                  alt="Special Moment 3"
+                  src="/gallery/scenic.jpeg"
+                  alt="Scenic Trip"
                   fill
-                  className="object-cover"
+                  className="object-cover absolute inset-0"
+                  style={{
+                    animation: 'scenicFade 30s infinite 0s'
+                  }}
+                />
+                <Image
+                  src="/gallery/scenic2.jpeg"
+                  alt="Scenic Trip"
+                  fill
+                  className="object-cover absolute inset-0"
+                  style={{
+                    animation: 'scenicFade 30s infinite 3s'
+                  }}
+                />
+                <Image
+                  src="/gallery/scenic3.jpeg"
+                  alt="Scenic Trip"
+                  fill
+                  className="object-cover absolute inset-0"
+                  style={{
+                    animation: 'scenicFade 30s infinite 6s'
+                  }}
+                />
+                <Image
+                  src="/gallery/scenic4.jpeg"
+                  alt="Scenic Trip"
+                  fill
+                  className="object-cover absolute inset-0"
+                  style={{
+                    animation: 'scenicFade 30s infinite 9s'
+                  }}
+                />
+                <Image
+                  src="/gallery/scenic5.jpeg"
+                  alt="Scenic Trip"
+                  fill
+                  className="object-cover absolute inset-0"
+                  style={{
+                    animation: 'scenicFade 30s infinite 12s'
+                  }}
+                />
+                <Image
+                  src="/gallery/scenic6.jpeg"
+                  alt="Scenic Trip"
+                  fill
+                  className="object-cover absolute inset-0"
+                  style={{
+                    animation: 'scenicFade 30s infinite 15s'
+                  }}
+                />
+                <Image
+                  src="/gallery/scenic7.jpeg"
+                  alt="Scenic Trip"
+                  fill
+                  className="object-cover absolute inset-0"
+                  style={{
+                    animation: 'scenicFade 30s infinite 18s'
+                  }}
+                />
+                <Image
+                  src="/gallery/scenic8.jpeg"
+                  alt="Scenic Trip"
+                  fill
+                  className="object-cover absolute inset-0"
+                  style={{
+                    animation: 'scenicFade 30s infinite 21s'
+                  }}
+                />
+                <Image
+                  src="/gallery/scenic9.jpeg"
+                  alt="Scenic Trip"
+                  fill
+                  className="object-cover absolute inset-0"
+                  style={{
+                    animation: 'scenicFade 30s infinite 24s'
+                  }}
+                />
+                <Image
+                  src="/gallery/scenic10.jpeg"
+                  alt="Scenic Trip"
+                  fill
+                  className="object-cover absolute inset-0"
+                  style={{
+                    animation: 'scenicFade 30s infinite 27s'
+                  }}
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Innovation Milestone</h3>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="text-2xl">🏔️</div>
+                  <h3 className="text-xl font-semibold">A scenic trip to Amedzofe Canopy Walk, Mount Gemi and the Volta Serene Hotel,Volta Region</h3>
+                </div>
                 <p className="text-muted-foreground mb-3">
-                  Reaching new heights in technological advancement and engineering solutions for our industrial partners.
+                  Exploring the beautiful landscapes of Ghana's Volta Region, including the breathtaking Amedzofe Canopy Walk and Mount Gemi, while enjoying the serene hospitality at Volta Serene Hotel.
                 </p>
-                <div className="text-sm text-primary font-medium">January 2024</div>
+                <div className="text-sm text-primary font-medium">June 2025</div>
               </div>
             </div>
 

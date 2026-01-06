@@ -64,7 +64,7 @@ const Navigation = () => {
             <img 
               src="/flowitec-logo.png" 
               alt="Flowitec" 
-              className="h-[180px] w-auto object-contain"
+              className="h-[160px] w-auto object-contain"
             />
           </Link>
 
