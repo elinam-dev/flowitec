@@ -48,10 +48,11 @@ const HeroVideo = ({ videoUrl, posterUrl, isLive = false, children }) => {
       <video
         ref={videoRef}
         id="heroVid"
+        autoPlay
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
         onCanPlay={handleCanPlay}
         onLoadedData={handleLoadedData}

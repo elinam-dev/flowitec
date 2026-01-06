@@ -378,7 +378,31 @@ const ReferencesPage = () => {
               </div>
             </div>
 
-            {/* Moment 4 */}
+            {/* Moment 4 - End of Year Beach Party */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all">
+              <div className="relative h-64">
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  preload="metadata"
+                >
+                  <source src="/gallery/end_of_year.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="text-2xl">🏖️</div>
+                  <h3 className="text-xl font-semibold">End of Year Beach Party</h3>
+                </div>
+                <p className="text-muted-foreground mb-3">
+                  Celebrating another successful year with our team at a beautiful beach setting. A perfect way to unwind, bond with colleagues, and reflect on our achievements while enjoying the sun, sand, and great company.
+                </p>
+                <div className="text-sm text-primary font-medium">December 2025</div>
+              </div>
+            </div>
+
+            {/* Moment 5 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all">
               <div className="relative h-64">
                 <Image
@@ -439,7 +463,7 @@ const ReferencesPage = () => {
       </section>
 
       {/* Galaxy of Our Customers */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20 bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Galaxy of Our Customers</h2>
