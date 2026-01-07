@@ -159,6 +159,46 @@ const ReferencesPage = () => {
                 </div>
               </div>
             </div>
+
+            {/* Project 3 */}
+            <div className="bg-card rounded-xl shadow-lg overflow-hidden">
+              <div className="relative h-64">
+                <Image
+                  src="/gallery/gallery13.jpg"
+                  alt="100KVA and 50KVA Power Transformers for a Renewable Energy Project"
+                  fill
+                  className="object-cover"
+                  priority={true}
+                />
+              </div>
+              <div className="p-6">
+                <div className="mb-4">
+                  <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-3">
+                    Project Reference
+                  </span>
+                  <h3 className="text-xl font-bold mb-3 leading-tight">
+                    100KVA and 50KVA Power Transformers for a Renewable Energy Project
+                  </h3>
+                  <div className="text-muted-foreground mb-4">
+                    Freetown, Sierra Leone
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div>
+                    <div className="text-sm font-medium text-muted-foreground mb-1">Project Type</div>
+                    <div className="font-semibold">Renewable Energy</div>
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-muted-foreground mb-1">Location</div>
+                    <div className="font-semibold">Freetown, Sierra Leone</div>
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-muted-foreground mb-1">Solution</div>
+                    <div className="font-semibold">Power Transformers Supply</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -212,6 +252,50 @@ const ReferencesPage = () => {
                     <div>
                       <span className="font-medium text-muted-foreground">Solution:</span>
                       <div className="font-semibold">Chemical Dosing System</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Order 2 */}
+            <div className="bg-card rounded-lg shadow-md overflow-hidden">
+              <div className="grid grid-cols-1 md:grid-cols-3">
+                <div className="relative h-48 md:h-auto">
+                  <Image
+                    src="/gallery/gallery11.jpg"
+                    alt="Supply of Various Electric Motors to a Mine"
+                    fill
+                    className="object-cover"
+                    priority={true}
+                  />
+                </div>
+                <div className="md:col-span-2 p-6">
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <span className="inline-block px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded mb-2">
+                        Order Reference
+                      </span>
+                      <h3 className="text-lg font-bold mb-2">
+                        Supply of Various Electric Motors to a Mine
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Western Region
+                      </p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+                    <div>
+                      <span className="font-medium text-muted-foreground">Industry:</span>
+                      <div className="font-semibold">Mining</div>
+                    </div>
+                    <div>
+                      <span className="font-medium text-muted-foreground">Location:</span>
+                      <div className="font-semibold">Western Region, Ghana</div>
+                    </div>
+                    <div>
+                      <span className="font-medium text-muted-foreground">Solution:</span>
+                      <div className="font-semibold">Electric Motors Supply</div>
                     </div>
                   </div>
                 </div>
