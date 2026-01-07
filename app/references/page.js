@@ -477,6 +477,30 @@ const ReferencesPage = () => {
                 <div className="text-sm text-primary font-medium">December 2025</div>
               </div>
             </div>
+
+            {/* Moment 7 - Mid Year Team Bonding Nigeria */}
+            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all">
+              <div className="relative h-64">
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  preload="auto"
+                >
+                  <source src="/gallery/event3.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="text-2xl">🤝</div>
+                  <h3 className="text-xl font-semibold">Mid Year Team Bonding Nigeria</h3>
+                </div>
+                <p className="text-muted-foreground mb-3">
+                  Strengthening team bonds and fostering collaboration among our Nigeria team members through engaging activities and shared experiences. Building stronger relationships that enhance our workplace culture and productivity.
+                </p>
+                <div className="text-sm text-primary font-medium">September 2025</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>

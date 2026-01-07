@@ -70,13 +70,13 @@ const CareersPage = () => {
       icon: ArrowRight,
       title: 'Career Growth',
       description: 'Advance your career with clear progression paths, mentorship programs, and leadership development opportunities.',
-      image: '/benefits/career-growth.jpeg'
+      image: '/career.jpeg'
     },
     {
       icon: Briefcase,
       title: 'Trainings and Capacity Building',
       description: 'Enhance your skills through continuous training programs, workshops, and professional development courses.',
-      image: '/benefits/trainings-capacity.jpeg'
+      image: '/training.jpeg'
     }
   ];
 
