@@ -65,6 +65,18 @@ const CareersPage = () => {
       title: 'Healthcare Benefits',
       description: 'Comprehensive healthcare coverage for you and your family, ensuring peace of mind and well-being.',
       image: '/benefits/healthcare-benefits.jpeg'
+    },
+    {
+      icon: ArrowRight,
+      title: 'Career Growth',
+      description: 'Advance your career with clear progression paths, mentorship programs, and leadership development opportunities.',
+      image: '/benefits/career-growth.jpeg'
+    },
+    {
+      icon: Briefcase,
+      title: 'Trainings and Capacity Building',
+      description: 'Enhance your skills through continuous training programs, workshops, and professional development courses.',
+      image: '/benefits/trainings-capacity.jpeg'
     }
   ];
 

@@ -32,6 +32,7 @@ const Navigation = () => {
         { name: 'Chemical', href: '/applications/chemical' },
         { name: 'Mine Water', href: '/applications/mine-water' },
         { name: 'Viscous Fluid', href: '/applications/viscous-fluid' },
+        { name: 'Fuel - Diesel, Petrol', href: '/applications/fuel' },
       ]
     },
     {
