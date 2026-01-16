@@ -199,6 +199,46 @@ const ReferencesPage = () => {
                 </div>
               </div>
             </div>
+
+            {/* Project 4 - Wastewater Treatment Plant */}
+            <div className="bg-card rounded-xl shadow-lg overflow-hidden">
+              <div className="relative h-64">
+                <Image
+                  src="/gallery/water_treatment1.jpeg"
+                  alt="Wastewater Treatment Plant"
+                  fill
+                  className="object-cover"
+                  priority={true}
+                />
+              </div>
+              <div className="p-6">
+                <div className="mb-4">
+                  <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-3">
+                    Project Reference
+                  </span>
+                  <h3 className="text-xl font-bold mb-3 leading-tight">
+                    Wastewater Treatment Plant
+                  </h3>
+                  <div className="text-muted-foreground mb-4">
+                    GTI Holdings (Head Office) Osu, Accra, Ghana
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <div>
+                    <div className="text-sm font-medium text-muted-foreground mb-1">Project Type</div>
+                    <div className="font-semibold">Wastewater Treatment</div>
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-muted-foreground mb-1">Location</div>
+                    <div className="font-semibold">GTI Holdings (Head Office) Osu, Accra, Ghana</div>
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-muted-foreground mb-1">Solution</div>
+                    <div className="font-semibold">Wastewater Treatment System</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
