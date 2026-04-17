@@ -2,14 +2,17 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Flowitec | Engineering & Procurement Solutions Across Africa',
-  description: 'Reliable Engineering & Procurement Solutions Across Africa. High-quality equipment, expert installations, and dependable after-sales support for industry and water systems.',
-  keywords: 'pumps, valves, motors, control panels, engineering, procurement, Africa, industrial equipment, water treatment, mining',
+  description:
+    'Reliable Engineering & Procurement Solutions Across Africa. High-quality equipment, expert installations, and dependable after-sales support for industry and water systems.',
+  keywords:
+    'pumps, valves, motors, control panels, engineering, procurement, Africa, industrial equipment, water treatment, mining',
   icons: {
     icon: [
       { url: '/flowitec-logo.png', sizes: '32x32', type: 'image/png' },
@@ -29,6 +32,7 @@ export default function RootLayout({ children }) {
         <Navigation />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <SpeedInsights />
         <Analytics />
       </body>
     </html>
