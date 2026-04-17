@@ -2,12 +2,14 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Play, Pause } from 'lucide-react';
+import Image from 'next/image';
 
 const HeroVideo = ({ videoUrl, posterUrl, isLive = false, children }) => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [showPoster, setShowPoster] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -19,11 +21,30 @@ const HeroVideo = ({ videoUrl, posterUrl, isLive = false, children }) => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  useEffect(() => {
+    // Try to autoplay on mobile after component mounts
+    if (isMobile && videoRef.current && isLoaded) {
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+            setShowPoster(false);
+          })
+          .catch(() => {
+            // Autoplay failed, show poster on mobile only
+            setShowPoster(true);
+          });
+      }
+    }
+  }, [isMobile, isLoaded]);
+
   const toggleVideo = () => {
     if (videoRef.current) {
       if (videoRef.current.paused) {
         videoRef.current.play();
         setIsPlaying(true);
+        setShowPoster(false);
       } else {
         videoRef.current.pause();
         setIsPlaying(false);
@@ -33,37 +54,49 @@ const HeroVideo = ({ videoUrl, posterUrl, isLive = false, children }) => {
 
   const handleCanPlay = () => {
     setIsLoaded(true);
-    if (videoRef.current) {
-      videoRef.current.play().catch(console.error);
-      setIsPlaying(true);
+    if (!isMobile && videoRef.current) {
+      videoRef.current.play().then(() => {
+        setIsPlaying(true);
+        setShowPoster(false);
+      }).catch(console.error);
     }
-  };
-
-  const handleLoadedData = () => {
-    setIsLoaded(true);
   };
 
   return (
     <section className="hero relative" aria-label="Flowitec hero">
+      {/* Video */}
       <video
         ref={videoRef}
         id="heroVid"
+        autoPlay
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="auto"
+        poster={posterUrl}
         className="absolute inset-0 w-full h-full object-cover"
         onCanPlay={handleCanPlay}
-        onLoadedData={handleLoadedData}
+        onLoadedData={() => setIsLoaded(true)}
       >
         <source src={videoUrl} type="video/mp4" />
       </video>
       
+      {/* Poster overlay for mobile when video isn't playing */}
+      {isMobile && showPoster && posterUrl && (
+        <Image
+          src={posterUrl}
+          alt="Flowitec Hero"
+          fill
+          className="absolute inset-0 w-full h-full object-cover z-5"
+          priority
+        />
+      )}
+      
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30 z-10" />
       
       {/* Content */}
-      <div className="hero-content relative z-10">
+      <div className="hero-content relative z-20">
         {isLive && (
           <span className="badge live mb-4">
             <span className="w-2 h-2 bg-white rounded-full mr-2 animate-pulse" />
@@ -74,16 +107,14 @@ const HeroVideo = ({ videoUrl, posterUrl, isLive = false, children }) => {
       </div>
 
       {/* Play/Pause Button */}
-      {isLoaded && (
-        <button
-          id="videoToggle"
-          onClick={toggleVideo}
-          aria-label={isPlaying ? 'Pause video' : 'Play video'}
-          className="absolute bottom-8 right-8 z-20 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition-all"
-        >
-          {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
-        </button>
-      )}
+      <button
+        id="videoToggle"
+        onClick={toggleVideo}
+        aria-label={isPlaying ? 'Pause video' : 'Play video'}
+        className="absolute bottom-8 right-8 z-30 bg-black/50 text-white p-3 rounded-full hover:bg-black/70 transition-all"
+      >
+        {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
+      </button>
     </section>
   );
 };

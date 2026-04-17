@@ -22,8 +22,34 @@ const Navigation = () => {
         { name: 'Spare Parts', href: '/products?category=spare-parts' },
       ]
     },
-    { name: 'Applications', href: '/applications' },
-    { name: 'Industries', href: '/industries' },
+    {
+      name: 'Applications',
+      href: '/applications',
+      dropdown: [
+        { name: 'Clean Water', href: '/applications/clean-water' },
+        { name: 'Waste Water', href: '/applications/waste-water' },
+        { name: 'Slurry', href: '/applications/slurry' },
+        { name: 'Chemical', href: '/applications/chemical' },
+        { name: 'Mine Water', href: '/applications/mine-water' },
+        { name: 'Viscous Fluid', href: '/applications/viscous-fluid' },
+        { name: 'Fuel - Diesel, Petrol', href: '/applications/fuel' },
+      ]
+    },
+    {
+      name: 'Industries',
+      href: '/industries',
+      dropdown: [
+        { name: 'Mining, Minerals & Metals', href: '/industries/mining-minerals-metals' },
+        { name: 'Food and Beverage', href: '/industries/food-and-beverage' },
+        { name: 'Power Plants', href: '/industries/power-plant' },
+        { name: 'Agriculture and Irrigation', href: '/industries/agriculture-irrigation' },
+        { name: 'Cement, Textile', href: '/industries/cement-and-textile' },
+        { name: 'Paper, Pulp and Packaging', href: '/industries/paper-pulp-packaging' },
+        { name: 'Petrochemical & Refinery', href: '/industries/petrochemical-refinery' },
+        { name: 'Marine and Chemical', href: '/industries/marine' },
+        { name: 'Pharmaceutical', href: '/industries/pharmaceuticals' },
+      ]
+    },
     { name: 'Services', href: '/services' },
     { name: 'References', href: '/references' },
     { name: 'Careers', href: '/careers' },
@@ -32,14 +58,14 @@ const Navigation = () => {
 
   return (
     <nav className="bg-white shadow-md border-b border-gray-200">
-      <div className="max-w-[1600px] mx-auto px-4 lg:px-8">
-        <div className="flex justify-between items-center h-24 lg:h-28">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+        <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo - Large and fits within header */}
           <Link href="/" className="flex items-center flex-shrink-0">
             <img 
               src="/flowitec-logo.png" 
               alt="Flowitec" 
-              className="h-[200px] w-auto object-contain"
+              className="h-[80px] sm:h-[100px] md:h-[120px] lg:h-[160px] w-auto object-contain"
             />
           </Link>
 
