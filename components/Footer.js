@@ -105,7 +105,7 @@ const Footer = () => {
         {/* Countries Section */}
         <div className="mt-16 pt-10 border-t border-gray-800">
           <h3 className="text-2xl font-bold mb-8 text-center">Our Presence Across Africa</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {BRANCHES.map((branch) => (
               <div key={branch.id} className="bg-gray-800/50 p-6 rounded-xl hover:bg-gray-800 transition-colors">
                 <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
