@@ -413,7 +413,7 @@ const ReferencesPage = () => {
                   fill
                   className="object-cover absolute inset-0"
                   style={{
-                    animation: 'employmentFade 8s infinite 0s'
+                    animation: 'employmentSlide 8s infinite 0s'
                   }}
                 />
                 <Image
@@ -422,7 +422,7 @@ const ReferencesPage = () => {
                   fill
                   className="object-cover absolute inset-0"
                   style={{
-                    animation: 'employmentFade 8s infinite 4s'
+                    animation: 'employmentSlide 8s infinite 4s'
                   }}
                 />
               </div>
@@ -447,7 +447,7 @@ const ReferencesPage = () => {
                   fill
                   className="object-cover absolute inset-0"
                   style={{
-                    animation: 'scenicFade 30s infinite 0s'
+                    animation: 'scenicSlideAnim 30s infinite 0s'
                   }}
                 />
                 <Image
@@ -456,7 +456,7 @@ const ReferencesPage = () => {
                   fill
                   className="object-cover absolute inset-0"
                   style={{
-                    animation: 'scenicFade 30s infinite 3s'
+                    animation: 'scenicSlideAnim 30s infinite 3s'
                   }}
                 />
                 <Image
@@ -465,7 +465,7 @@ const ReferencesPage = () => {
                   fill
                   className="object-cover absolute inset-0"
                   style={{
-                    animation: 'scenicFade 30s infinite 6s'
+                    animation: 'scenicSlideAnim 30s infinite 6s'
                   }}
                 />
                 <Image
@@ -474,7 +474,7 @@ const ReferencesPage = () => {
                   fill
                   className="object-cover absolute inset-0"
                   style={{
-                    animation: 'scenicFade 30s infinite 9s'
+                    animation: 'scenicSlideAnim 30s infinite 9s'
                   }}
                 />
                 <Image
@@ -483,7 +483,7 @@ const ReferencesPage = () => {
                   fill
                   className="object-cover absolute inset-0"
                   style={{
-                    animation: 'scenicFade 30s infinite 12s'
+                    animation: 'scenicSlideAnim 30s infinite 12s'
                   }}
                 />
                 <Image
@@ -492,7 +492,7 @@ const ReferencesPage = () => {
                   fill
                   className="object-cover absolute inset-0"
                   style={{
-                    animation: 'scenicFade 30s infinite 15s'
+                    animation: 'scenicSlideAnim 30s infinite 15s'
                   }}
                 />
                 <Image
@@ -501,7 +501,7 @@ const ReferencesPage = () => {
                   fill
                   className="object-cover absolute inset-0"
                   style={{
-                    animation: 'scenicFade 30s infinite 18s'
+                    animation: 'scenicSlideAnim 30s infinite 18s'
                   }}
                 />
                 <Image
@@ -510,7 +510,7 @@ const ReferencesPage = () => {
                   fill
                   className="object-cover absolute inset-0"
                   style={{
-                    animation: 'scenicFade 30s infinite 21s'
+                    animation: 'scenicSlideAnim 30s infinite 21s'
                   }}
                 />
                 <Image
@@ -519,7 +519,7 @@ const ReferencesPage = () => {
                   fill
                   className="object-cover absolute inset-0"
                   style={{
-                    animation: 'scenicFade 30s infinite 24s'
+                    animation: 'scenicSlideAnim 30s infinite 24s'
                   }}
                 />
                 <Image
@@ -528,7 +528,7 @@ const ReferencesPage = () => {
                   fill
                   className="object-cover absolute inset-0"
                   style={{
-                    animation: 'scenicFade 30s infinite 27s'
+                    animation: 'scenicSlideAnim 30s infinite 27s'
                   }}
                 />
               </div>
@@ -577,7 +577,7 @@ const ReferencesPage = () => {
                   fill
                   className="object-cover object-top absolute inset-0"
                   style={{
-                    animation: 'employmentFade 8s infinite 0s'
+                    animation: 'employmentSlide 8s infinite 0s'
                   }}
                 />
                 <Image
@@ -586,7 +586,7 @@ const ReferencesPage = () => {
                   fill
                   className="object-cover object-top absolute inset-0"
                   style={{
-                    animation: 'employmentFade 8s infinite 4s'
+                    animation: 'employmentSlide 8s infinite 4s'
                   }}
                 />
               </div>
