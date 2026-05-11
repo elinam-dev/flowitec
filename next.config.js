@@ -7,7 +7,11 @@ const nextConfig = {
     minimumCacheTTL: 60 * 60 * 24 * 30,
     domains: ['images.pexels.com'],
     qualities: [75],
+    dangerouslyAllowSVG: false,
+    contentDispositionType: 'attachment',
+    remotePatterns: [],
   },
+
   compress: true,
   async headers() {
     return [

@@ -119,7 +119,9 @@ const Footer = () => {
                 </div>
                 <div className="text-center space-y-1">
                   <div className="text-sm text-primary">{branch.email}</div>
+                  {branch.email2 && <div className="text-sm text-primary">{branch.email2}</div>}
                   {branch.phone && <div className="text-sm text-gray-400">{branch.phone}</div>}
+                  {branch.phone2 && <div className="text-sm text-gray-400">{branch.phone2}</div>}
                 </div>
               </div>
             ))}

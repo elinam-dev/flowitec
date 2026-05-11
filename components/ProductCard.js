@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 import { useState } from 'react';
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, priority = false }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
   
@@ -23,7 +23,8 @@ const ProductCard = ({ product }) => {
             className={`group-hover:scale-105 transition-all duration-300 object-cover ${
               imageLoaded ? 'opacity-100' : 'opacity-0'
             }`}
-            quality={10}
+            quality={60}
+            priority={priority}
             sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
             onLoad={() => setImageLoaded(true)}
             onError={() => setImageError(true)}

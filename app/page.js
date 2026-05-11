@@ -62,8 +62,8 @@ export default function Home() {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {ALL_PRODUCTS.slice(0, 6).map((product) => (
-                <ProductCard key={product.id} product={product} />
+              {ALL_PRODUCTS.slice(0, 6).map((product, index) => (
+                <ProductCard key={product.id} product={product} priority={index < 6} />
               ))}
             </div>
             <div className="text-center mt-12">
