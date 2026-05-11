@@ -72,7 +72,7 @@ const HeroVideo = ({ videoUrl, posterUrl, isLive = false, children }) => {
         muted
         loop
         playsInline
-        preload="auto"
+        preload={isMobile ? 'none' : 'auto'}
         poster={posterUrl}
         className="absolute inset-0 w-full h-full object-cover"
         onCanPlay={handleCanPlay}
