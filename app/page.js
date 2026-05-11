@@ -145,8 +145,6 @@ export default function Home() {
                         className="group-hover:scale-105 transition-transform duration-300 object-cover"
                         quality={40}
                         sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                        priority={true}
-                        loading="eager"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                       <div className="absolute bottom-4 left-4 text-white">

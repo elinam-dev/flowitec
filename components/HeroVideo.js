@@ -9,7 +9,7 @@ const HeroVideo = ({ videoUrl, posterUrl, isLive = false, children }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [showPoster, setShowPoster] = useState(false);
+  const [showPoster, setShowPoster] = useState(true);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -17,13 +17,11 @@ const HeroVideo = ({ videoUrl, posterUrl, isLive = false, children }) => {
     };
     checkMobile();
     window.addEventListener('resize', checkMobile);
-
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   useEffect(() => {
-    // Try to autoplay on mobile after component mounts
-    if (isMobile && videoRef.current && isLoaded) {
+    if (videoRef.current && isLoaded) {
       const playPromise = videoRef.current.play();
       if (playPromise !== undefined) {
         playPromise
@@ -32,12 +30,11 @@ const HeroVideo = ({ videoUrl, posterUrl, isLive = false, children }) => {
             setShowPoster(false);
           })
           .catch(() => {
-            // Autoplay failed, show poster on mobile only
             setShowPoster(true);
           });
       }
     }
-  }, [isMobile, isLoaded]);
+  }, [isLoaded]);
 
   const toggleVideo = () => {
     if (videoRef.current) {
@@ -54,43 +51,38 @@ const HeroVideo = ({ videoUrl, posterUrl, isLive = false, children }) => {
 
   const handleCanPlay = () => {
     setIsLoaded(true);
-    if (!isMobile && videoRef.current) {
-      videoRef.current.play().then(() => {
-        setIsPlaying(true);
-        setShowPoster(false);
-      }).catch(console.error);
-    }
   };
 
   return (
     <section className="hero relative" aria-label="Flowitec hero">
-      {/* Video */}
+      {/* Poster image — shown immediately, is the LCP element */}
+      {posterUrl && (
+        <Image
+          src={posterUrl}
+          alt="Flowitec Hero"
+          fill
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${
+            showPoster ? 'opacity-100' : 'opacity-0'
+          }`}
+          priority
+          fetchPriority="high"
+        />
+      )}
+
+      {/* Video — loads after poster is visible */}
       <video
         ref={videoRef}
         id="heroVid"
-        autoPlay
         muted
         loop
         playsInline
-        preload={isMobile ? 'none' : 'auto'}
-        poster={posterUrl}
+        preload="none"
         className="absolute inset-0 w-full h-full object-cover"
         onCanPlay={handleCanPlay}
         onLoadedData={() => setIsLoaded(true)}
       >
         <source src={videoUrl} type="video/mp4" />
       </video>
-      
-      {/* Poster overlay for mobile when video isn't playing */}
-      {isMobile && showPoster && posterUrl && (
-        <Image
-          src={posterUrl}
-          alt="Flowitec Hero"
-          fill
-          className="absolute inset-0 w-full h-full object-cover z-5"
-          priority
-        />
-      )}
       
       {/* Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30 z-10" />

@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preload" as="image" href="/mining-1.jpg" />
+        <link rel="preload" as="image" href="/mining-1.jpg" fetchPriority="high" />
       </head>
       <body className={inter.className}>
         <Navigation />
