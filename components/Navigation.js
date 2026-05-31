@@ -54,7 +54,7 @@ const Navigation = () => {
     { name: 'References', href: '/references' },
     { name: 'Careers', href: '/careers' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Staff Portal', href: 'https://flowitecgoandgrow.com', external: true },
+    { name: 'Staff', href: 'https://flowitecgoandgrow.com', external: true },
   ];
 
   return (
