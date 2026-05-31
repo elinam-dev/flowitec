@@ -54,7 +54,7 @@ const Navigation = () => {
     { name: 'References', href: '/references' },
     { name: 'Careers', href: '/careers' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Staff', href: 'https://flowitecgoandgrow.com', external: true },
+    { name: 'Staff Portal', href: 'https://flowitecgoandgrow.com', external: true },
   ];
 
   return (
@@ -71,12 +71,12 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation - Ash background */}
-          <div className="hidden lg:flex items-center bg-[#B0B6BB] rounded-lg px-2 py-2 space-x-1">
+          <div className="hidden lg:flex items-center bg-[#B0B6BB] rounded-lg px-1 py-1 space-x-0">
             {navItems.map((item) => (
               <div key={item.name} className="relative group">
                 {item.dropdown ? (
                   <>
-                    <button className="px-3 py-2 text-sm font-semibold text-gray-800 hover:bg-white/50 hover:text-primary rounded-md transition-colors flex items-center">
+                    <button className="px-2 py-1.5 text-xs font-semibold text-gray-800 hover:bg-white/50 hover:text-primary rounded-md transition-colors flex items-center whitespace-nowrap">
                       {item.name}
                       <ChevronDown className="ml-1 w-3 h-3" />
                     </button>
@@ -97,14 +97,14 @@ const Navigation = () => {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3 py-2 text-sm font-semibold text-gray-800 hover:bg-white/50 hover:text-primary rounded-md transition-colors"
+                    className="px-2 py-1.5 text-xs font-semibold text-gray-800 hover:bg-white/50 hover:text-primary rounded-md transition-colors whitespace-nowrap"
                   >
                     {item.name}
                   </a>
                 ) : (
                   <Link
                     href={item.href}
-                    className="px-3 py-2 text-sm font-semibold text-gray-800 hover:bg-white/50 hover:text-primary rounded-md transition-colors"
+                    className="px-2 py-1.5 text-xs font-semibold text-gray-800 hover:bg-white/50 hover:text-primary rounded-md transition-colors whitespace-nowrap"
                   >
                     {item.name}
                   </Link>
