@@ -54,6 +54,7 @@ const Navigation = () => {
     { name: 'References', href: '/references' },
     { name: 'Careers', href: '/careers' },
     { name: 'Contact', href: '/contact' },
+    { name: 'Staff Portal', href: 'https://flowitecgoandgrow.com', external: true },
   ];
 
   return (
@@ -91,6 +92,15 @@ const Navigation = () => {
                       ))}
                     </div>
                   </>
+                ) : item.external ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-2 text-sm font-semibold text-gray-800 hover:bg-white/50 hover:text-primary rounded-md transition-colors"
+                  >
+                    {item.name}
+                  </a>
                 ) : (
                   <Link
                     href={item.href}
@@ -149,6 +159,16 @@ const Navigation = () => {
                       </div>
                     )}
                   </div>
+                ) : item.external ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-3 text-foreground hover:bg-muted touch-manipulation"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </a>
                 ) : (
                   <Link
                     href={item.href}
