@@ -76,7 +76,8 @@ const HeroVideo = ({ videoUrl, posterUrl, isLive = false, children }) => {
         muted
         loop
         playsInline
-        preload="none"
+        autoPlay
+        preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
         onCanPlay={handleCanPlay}
         onLoadedData={() => setIsLoaded(true)}
