@@ -11,7 +11,8 @@ const AfricaMap2D = ({ offices, onSelectOffice }) => {
   const officePositions = {
     'Ghana': { x: 30, y: 40, label: 'Ghana' },
     'Nigeria': { x: 40, y: 40, label: 'Nigeria' },
-    'Kenya': { x: 76, y: 50, label: 'Kenya' }
+    'Kenya': { x: 76, y: 50, label: 'Kenya' },
+    'South Africa': { x: 48, y: 77, label: 'South Africa' }
   };
 
   return (

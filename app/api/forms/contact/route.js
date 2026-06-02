@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { sendEmail, getContactEmailTemplate } from '@/lib/email';
+import { saveSubmission } from '@/lib/db';
 
 export async function POST(request) {
   try {
@@ -23,6 +24,14 @@ export async function POST(request) {
       interest,
       message
     };
+
+    // Save submission to database
+    try {
+      await saveSubmission('contact', emailData);
+    } catch (dbError) {
+      console.warn('Failed to save submission to database:', dbError.message);
+      // Don't fail the request if database save fails
+    }
 
     // Send email to info@flowitec.com
     const emailResult = await sendEmail({

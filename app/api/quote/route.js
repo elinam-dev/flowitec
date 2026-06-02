@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { sendEmail, getContactEmailTemplate } from '@/lib/email';
+import { saveSubmission } from '@/lib/db';
 
 export async function POST(request) {
   try {
@@ -21,6 +22,14 @@ export async function POST(request) {
       company,
       message
     };
+
+    // Save submission to database
+    try {
+      await saveSubmission('quote', emailData);
+    } catch (dbError) {
+      console.warn('Failed to save submission to database:', dbError.message);
+      // Don't fail the request if database save fails
+    }
 
     // Send email using the email utility
     const emailResult = await sendEmail({
