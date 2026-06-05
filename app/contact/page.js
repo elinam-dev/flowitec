@@ -27,7 +27,7 @@ const ContactPage = () => {
     setSubmitStatus(null);
 
     try {
-      const response = await fetch('/api/forms/contact', {
+      const response = await fetch('/api/quote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
