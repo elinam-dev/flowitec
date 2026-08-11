@@ -125,10 +125,12 @@ const IndustryDetailPage = ({ params }) => {
                     <h3 className="text-xl font-semibold mb-2">{branch.city}</h3>
                     <div className="text-sm text-muted-foreground mb-3">{branch.country}</div>
                     <div className="space-y-2 text-sm">
-                      <div className="flex items-center gap-2">
-                        <Phone className="w-4 h-4 text-primary" />
-                        <span>{branch.phone}</span>
-                      </div>
+                      {[branch.phone, branch.phone2, branch.phone3].filter(Boolean).map((phone, idx) => (
+                        <div key={idx} className="flex items-center gap-2">
+                          <Phone className="w-4 h-4 text-primary" />
+                          <span>{phone}</span>
+                        </div>
+                      ))}
                       <div className="flex items-center gap-2">
                         <Mail className="w-4 h-4 text-primary" />
                         <span>{branch.email}</span>

@@ -122,6 +122,7 @@ const Footer = () => {
                   {branch.email2 && <div className="text-sm text-primary">{branch.email2}</div>}
                   {branch.phone && <div className="text-sm text-gray-400">{branch.phone}</div>}
                   {branch.phone2 && <div className="text-sm text-gray-400">{branch.phone2}</div>}
+                  {branch.phone3 && <div className="text-sm text-gray-400">{branch.phone3}</div>}
                 </div>
               </div>
             ))}

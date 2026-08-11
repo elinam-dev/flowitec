@@ -126,14 +126,14 @@ const ContactPage = () => {
                   <span className="text-gray-600">{line}</span>
                 </div>
               ))}
-              {selectedOffice.phone && (
-                <div className="flex items-center gap-3">
+              {[selectedOffice.phone, selectedOffice.phone2, selectedOffice.phone3].filter(Boolean).map((phone, idx) => (
+                <div key={idx} className="flex items-center gap-3">
                   <Phone className="w-5 h-5 text-primary" />
-                  <a href={`tel:${selectedOffice.phone}`} className="text-primary hover:underline font-medium">
-                    {selectedOffice.phone}
+                  <a href={`tel:${phone}`} className="text-primary hover:underline font-medium">
+                    {phone}
                   </a>
                 </div>
-              )}
+              ))}
               <div className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary" />
                 <a href={`mailto:${selectedOffice.email}`} className="text-primary hover:underline">
@@ -176,12 +176,12 @@ const ContactPage = () => {
                   {branch.address_lines && branch.address_lines.map((line, idx) => (
                     <div key={idx} className="text-muted-foreground text-center">{line}</div>
                   ))}
-                  {branch.phone && (
-                    <div className="flex items-center justify-center gap-2 pt-4">
+                  {[branch.phone, branch.phone2, branch.phone3].filter(Boolean).map((phone, idx) => (
+                    <div key={idx} className="flex items-center justify-center gap-2 pt-4">
                       <Phone className="w-4 h-4 text-primary" />
-                      <span className="text-primary font-medium">{branch.phone}</span>
+                      <span className="text-primary font-medium">{phone}</span>
                     </div>
-                  )}
+                  ))}
                   <div className="flex items-center justify-center gap-2">
                     <Mail className="w-4 h-4 text-primary" />
                     <span className="text-primary">{branch.email}</span>
