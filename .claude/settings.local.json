@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -rf \"/c/Users/HP X360/fowitec1/.git\" && ls -la \"/c/Users/HP X360/fowitec1\")"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\HP X360\\fowitec1\\.git"
+    ]
+  }
+}
