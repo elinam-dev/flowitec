@@ -6,6 +6,12 @@ import { Search, ChevronDown, ChevronUp } from 'lucide-react';
 import ProductCard from '@/components/ProductCard';
 import { ALL_PRODUCTS } from '@/lib/productsData';
 
+export const metadata = {
+  title: 'Industrial Products',
+  description: 'Browse Flowitec\'s full range of industrial products — pumps, valves, electric motors, control panels, and spare parts from world-class manufacturers for mining, agriculture, water treatment, and more.',
+  alternates: { canonical: 'https://flowitec.com/products' },
+};
+
 function ProductsContent() {
   const searchParams = useSearchParams();
   const [products, setProducts] = useState([]);

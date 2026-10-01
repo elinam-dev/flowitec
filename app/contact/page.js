@@ -3,9 +3,13 @@
 import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, AlertCircle, CheckCircle2, X } from 'lucide-react';
 import { BRANCHES } from '@/lib/mockData';
-
-// Import the 2D Africa Map component
 import AfricaMap2D from '@/components/Africamap2D';
+
+export const metadata = {
+  title: 'Contact Us',
+  description: 'Get in touch with Flowitec. Contact our offices in Ghana, Nigeria, Kenya, and South Africa for sales enquiries, service requests, and spare parts. 24/7 emergency support available.',
+  alternates: { canonical: 'https://flowitec.com/contact' },
+};
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({

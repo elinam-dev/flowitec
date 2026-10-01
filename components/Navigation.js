@@ -60,13 +60,13 @@ const Navigation = () => {
   return (
     <nav className="bg-white shadow-md border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="flex justify-between items-center h-16 lg:h-20">
+        <div className="flex justify-between items-center h-16 lg:h-24">
           {/* Logo - Large and fits within header */}
           <Link href="/" className="flex items-center flex-shrink-0">
             <img 
               src="/flowitec-logo.png" 
               alt="Flowitec" 
-              className="h-[80px] sm:h-[100px] md:h-[120px] lg:h-[160px] w-auto object-contain"
+              className="h-[60px] sm:h-[70px] lg:h-[88px] w-auto object-contain"
             />
           </Link>
 
@@ -76,7 +76,7 @@ const Navigation = () => {
               <div key={item.name} className="relative group">
                 {item.dropdown ? (
                   <>
-                    <button className="px-2 py-1.5 text-xs font-semibold text-gray-800 hover:bg-white/50 hover:text-primary rounded-md transition-colors flex items-center whitespace-nowrap">
+                    <button className="px-2 py-1.5 text-sm font-semibold text-gray-800 hover:bg-white/50 hover:text-primary rounded-md transition-colors flex items-center whitespace-nowrap">
                       {item.name}
                       <ChevronDown className="ml-1 w-3 h-3" />
                     </button>
@@ -97,14 +97,14 @@ const Navigation = () => {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-2 py-1.5 text-xs font-semibold text-gray-800 hover:bg-white/50 hover:text-primary rounded-md transition-colors whitespace-nowrap"
+                    className="px-2 py-1.5 text-sm font-semibold text-gray-800 hover:bg-white/50 hover:text-primary rounded-md transition-colors whitespace-nowrap"
                   >
                     {item.name}
                   </a>
                 ) : (
                   <Link
                     href={item.href}
-                    className="px-2 py-1.5 text-xs font-semibold text-gray-800 hover:bg-white/50 hover:text-primary rounded-md transition-colors whitespace-nowrap"
+                    className="px-2 py-1.5 text-sm font-semibold text-gray-800 hover:bg-white/50 hover:text-primary rounded-md transition-colors whitespace-nowrap"
                   >
                     {item.name}
                   </Link>

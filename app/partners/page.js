@@ -1,6 +1,11 @@
-'use client';
-
 import { PARTNERS } from '@/lib/mockData';
+import Image from 'next/image';
+
+export const metadata = {
+  title: 'Our Partners',
+  description: 'Flowitec partners with world-class manufacturers including C.R.I. Pumps, Franklin Electric, Bray, Pioneer Pump, and more to deliver genuine industrial equipment across Africa.',
+  alternates: { canonical: 'https://flowitec.com/partners' },
+};
 
 const PartnersPage = () => {
   return (
@@ -35,10 +40,12 @@ const PartnersPage = () => {
                 className="bg-card p-6 rounded-lg shadow-md hover:shadow-xl transition-all flex flex-col items-center justify-center group"
               >
                 <div className="h-20 flex items-center justify-center mb-3">
-                  <img 
-                    src={partner.logo} 
+                  <Image
+                    src={partner.logo}
                     alt={partner.name}
-                    className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform"
+                    width={120}
+                    height={80}
+                    className="max-h-full w-auto object-contain group-hover:scale-105 transition-transform"
                   />
                 </div>
                 <p className="text-sm font-medium text-center text-muted-foreground">{partner.name}</p>

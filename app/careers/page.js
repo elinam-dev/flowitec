@@ -6,6 +6,12 @@ import Link from 'next/link';
 import { JOBS } from '@/lib/mockData';
 import Image from 'next/image';
 
+export const metadata = {
+  title: 'Careers',
+  description: 'Join Flowitec — Africa\'s leading engineering solutions provider. Browse open positions in sales, technical, and operations across Ghana, Nigeria, Kenya, and Tanzania.',
+  alternates: { canonical: 'https://flowitec.com/careers' },
+};
+
 const CareersPage = () => {
   const [jobs, setJobs] = useState([]);
   const [selectedDepartment, setSelectedDepartment] = useState('all');

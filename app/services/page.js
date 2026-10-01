@@ -1,7 +1,11 @@
-'use client';
-
 import { SERVICES } from '@/lib/mockData';
 import { Phone } from 'lucide-react';
+
+export const metadata = {
+  title: 'Engineering Services',
+  description: 'Comprehensive engineering services across Africa — maintenance, installation, commissioning, diagnostics, spare parts, and 24/7 technical support for pumps, valves, and motors.',
+  alternates: { canonical: 'https://flowitec.com/services' },
+};
 import Image from 'next/image';
 
 const ServicesPage = () => {

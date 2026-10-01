@@ -1,10 +1,15 @@
 'use client';
 
 import { useRef, useEffect, useState } from 'react';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { CheckCircle, Award, Users, Globe, Target, Eye, Heart, Shield, Lightbulb, Handshake } from 'lucide-react';
 import { IMAGES } from '@/lib/mockData';
+
+export const metadata = {
+  title: 'About Us',
+  description: 'Learn about Flowitec Group — founded in 2017, operating across Ghana, Nigeria, Kenya, and South Africa. Engineering excellence, 1000+ deliveries, and a team committed to industrial solutions.',
+  alternates: { canonical: 'https://flowitec.com/about' },
+};
 
 const AboutContent = () => {
   const timeline = [
@@ -110,14 +115,7 @@ const AboutContent = () => {
     );
   };
 
-  const certifications = [
-    { name: 'ISO 9001:2015', description: 'Quality Management' },
-    { name: 'ISO 14001:2015', description: 'Environmental Management' },
-    { name: 'OHSAS 18001', description: 'Health & Safety' },
-    { name: 'API Certified', description: 'American Petroleum Institute' }
-  ];
 
-  return (
     <div>
       {/* Hero */}
       <section className="relative h-[450px] text-white">
@@ -187,7 +185,7 @@ const AboutContent = () => {
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Users className="w-8 h-8 text-primary" />
                   </div>
-                  <div className="text-2xl font-bold">20+</div>
+                  <div className="text-2xl font-bold">8+</div>
                   <div className="text-sm text-muted-foreground">Years</div>
                 </div>
               </div>
@@ -271,18 +269,8 @@ const AboutContent = () => {
           {/* Timeline Container */}
           <div className="relative max-w-6xl mx-auto">
             {/* Vertical Line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-primary/20 -translate-x-1/2 hidden md:block overflow-hidden">
-              <div 
-                className="w-full bg-primary transition-all duration-1000 ease-out"
-                style={{
-                  height: `${Math.min(100, (timeline.filter((_, i) => i <= timeline.findIndex((_, idx) => {
-                    const element = document.querySelector(`[data-timeline-index="${idx}"]`);
-                    if (!element) return false;
-                    const rect = element.getBoundingClientRect();
-                    return rect.top < window.innerHeight * 0.7;
-                  }).length - 1) / timeline.length) * 100)}%`
-                }}
-              />
+            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-primary/20 -translate-x-1/2 hidden md:block">
+              <div className="w-full h-full bg-primary/40" />
             </div>
             
             {/* Timeline Items */}
@@ -304,21 +292,33 @@ const AboutContent = () => {
       <section className="py-20 bg-muted/30">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Quality & Certifications</h2>
+            <h2 className="text-4xl font-bold mb-4">Quality Commitment</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Our commitment to quality is demonstrated through our certifications and adherence to international standards.
+              Our commitment to quality is demonstrated through our adherence to international standards and continuous improvement across all operations.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {certifications.map((cert, index) => (
-              <div key={index} className="bg-card p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-all">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <CheckCircle className="w-8 h-8 text-primary" />
-                </div>
-                <h4 className="text-lg font-semibold mb-2">{cert.name}</h4>
-                <p className="text-sm text-muted-foreground">{cert.description}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="bg-card p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-all">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-8 h-8 text-primary" />
               </div>
-            ))}
+              <h4 className="text-lg font-semibold mb-2">Genuine Products</h4>
+              <p className="text-sm text-muted-foreground">All equipment sourced directly from authorised manufacturers with full warranties</p>
+            </div>
+            <div className="bg-card p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-all">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-8 h-8 text-primary" />
+              </div>
+              <h4 className="text-lg font-semibold mb-2">Factory-Trained Team</h4>
+              <p className="text-sm text-muted-foreground">Our engineers are trained by the manufacturers we represent</p>
+            </div>
+            <div className="bg-card p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-all">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <CheckCircle className="w-8 h-8 text-primary" />
+              </div>
+              <h4 className="text-lg font-semibold mb-2">After-Sales Support</h4>
+              <p className="text-sm text-muted-foreground">Dedicated support team available for maintenance, spares, and technical guidance</p>
+            </div>
           </div>
         </div>
       </section>
@@ -348,6 +348,4 @@ const AboutPage = () => {
   return <AboutContent />;
 };
 
-export default dynamic(() => Promise.resolve(AboutPage), {
-  ssr: false
-});
+export default AboutPage;

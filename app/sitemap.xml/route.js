@@ -3,7 +3,7 @@ import { INDUSTRIES, APPLICATIONS, JOBS } from '@/lib/mockData';
 import { ALL_PRODUCTS } from '@/lib/productsData';
 
 export async function GET() {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://nextjs-flowitec.preview.emergentagent.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://flowitec.com';
   
   const staticPages = [
     '',

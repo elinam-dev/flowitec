@@ -3,6 +3,12 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { X, Download, Filter } from 'lucide-react';
+
+export const metadata = {
+  title: 'Order References & Projects',
+  description: '1000+ successful equipment deliveries and project installations across Ghana, Nigeria, and Kenya. View Flowitec\'s project references in mining, water treatment, agriculture, and more.',
+  alternates: { canonical: 'https://flowitec.com/references' },
+};
 const Gallery = [
 '/gallery/gallery2.jpg',
 '/gallery/gallery3.jpg',
