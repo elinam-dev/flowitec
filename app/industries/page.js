@@ -6,12 +6,6 @@ import Image from 'next/image';
 import { ArrowRight, ChevronLeft, ChevronRight, Filter } from 'lucide-react';
 import { INDUSTRIES_CMS } from '@/lib/industriesData';
 
-export const metadata = {
-  title: 'Industries We Serve',
-  description: 'Flowitec delivers specialized engineering solutions for mining, food & beverage, agriculture, petrochemical, power plants, water treatment, and more across Africa.',
-  alternates: { canonical: 'https://flowitec.com/industries' },
-};
-
 const IndustriesPage = () => {
   const [industries, setIndustries] = useState(INDUSTRIES_CMS);
   const [featuredIndustries, setFeaturedIndustries] = useState(INDUSTRIES_CMS.filter(ind => ind.featured));
