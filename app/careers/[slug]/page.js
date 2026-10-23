@@ -10,7 +10,7 @@ export async function generateStaticParams() {
 }
 
 function getJob(slug) {
-  return JOBS.find(job => job.slug === slug);
+  return JOBS.find(job => job.slug === slug && job.isActive);
 }
 
 const CareerDetailPage = ({ params }) => {
