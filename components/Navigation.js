@@ -64,8 +64,8 @@ const Navigation = () => {
           {/* Logo - Large and fits within header */}
           <Link href="/" className="flex items-center flex-shrink-0">
             <img 
-              src="/flowitec-logo.png" 
-              alt="Flowitec" 
+              src="/flowitec-logo-header.png"
+              alt="Flowitec"
               className="h-[60px] sm:h-[70px] lg:h-[88px] w-auto object-contain"
             />
           </Link>
