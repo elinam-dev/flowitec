@@ -18,7 +18,28 @@ export default function AdminSubmissions() {
       setLoading(true);
       setError(null);
       
-      const response = await fetch('/api/admin/submissions?type=contact');
+      let token = null;
+      try {
+        token = sessionStorage.getItem('flowitec-admin-token');
+      } catch {}
+      if (!token) {
+        token = window.prompt('Enter admin access token');
+        if (!token) throw new Error('Admin access token required');
+        try {
+          sessionStorage.setItem('flowitec-admin-token', token);
+        } catch {}
+      }
+
+      const response = await fetch('/api/admin/submissions?type=contact', {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+
+      if (response.status === 401) {
+        try {
+          sessionStorage.removeItem('flowitec-admin-token');
+        } catch {}
+        throw new Error('Invalid admin access token');
+      }
       
       if (!response.ok) {
         throw new Error('Failed to fetch submissions');

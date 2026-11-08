@@ -30,7 +30,7 @@ We also collect certain information automatically when you visit our website, in
 • Usage data: pages visited, time spent on pages, referring URLs, and navigation paths.
 • Analytics data: aggregated and anonymised data collected via Vercel Analytics and Vercel Speed Insights to help us improve website performance.
 
-We do not use cookies for advertising or tracking purposes. We do not collect sensitive personal data such as health information, financial account details, or government identification numbers through this website.`,
+Analytics data is only collected if you accept analytics in our cookie banner (see section 9). We do not use cookies for advertising. We do not collect sensitive personal data such as health information, financial account details, or government identification numbers through this website.`,
   },
   {
     title: '3. How We Use Your Information',
@@ -104,15 +104,26 @@ While we take all reasonable steps to protect your data, no method of transmissi
 To exercise any of these rights, please contact us at info@flowitec.com. We will respond to your request within 30 days. We may need to verify your identity before processing your request.`,
   },
   {
-    title: '9. Third-Party Links',
+    id: 'cookies',
+    title: '9. Cookies and Analytics',
+    content: `When you first visit our website, a banner asks whether you accept analytics. We only load Vercel Analytics and Vercel Speed Insights if you click "Accept". If you click "Decline", no analytics are collected.
+
+We store your choice in your browser's local storage (key: "flowitec-cookie-consent") so we do not ask you again on every visit. This is strictly necessary to remember your preference and contains no personal information.
+
+Vercel Analytics does not use cookies and does not track you across other websites. It records aggregated information such as pages visited, referring site, country, browser and device type.
+
+You can change your choice at any time by clicking "Cookie Settings" at the bottom of any page, or by clearing your browser's site data.`,
+  },
+  {
+    title: '10. Third-Party Links',
     content: `Our website may contain links to third-party websites, including manufacturer websites and partner portals. This Privacy Policy applies only to our website. We are not responsible for the privacy practices of any third-party websites and encourage you to review their privacy policies before providing any personal information.`,
   },
   {
-    title: '10. Children\'s Privacy',
+    title: '11. Children\'s Privacy',
     content: `Our website and services are directed at business professionals and are not intended for use by individuals under the age of 18. We do not knowingly collect personal information from children. If you believe we have inadvertently collected information from a child, please contact us immediately and we will take steps to delete it.`,
   },
   {
-    title: '11. Changes to This Policy',
+    title: '12. Changes to This Policy',
     content: `We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. We will post the revised policy on this page with an updated effective date. We encourage you to review this policy periodically. Your continued use of our website after any changes constitutes acceptance of the updated policy.`,
   },
 ];
@@ -128,7 +139,7 @@ export default function PrivacyPage() {
             <span>Privacy Policy</span>
           </nav>
           <h1 className="text-5xl font-bold mb-4">Privacy Policy</h1>
-          <p className="text-xl opacity-90">Effective date: 1 January 2025</p>
+          <p className="text-xl opacity-90">Effective date: 22 October 2026</p>
         </div>
       </section>
 
@@ -149,7 +160,7 @@ export default function PrivacyPage() {
               <ol className="space-y-1 text-sm text-muted-foreground list-decimal list-inside">
                 {sections.map((s, i) => (
                   <li key={i}>
-                    <a href={`#section-${i}`} className="hover:text-primary transition-colors">
+                    <a href={`#${s.id || `section-${i}`}`} className="hover:text-primary transition-colors">
                       {s.title.replace(/^\d+\.\s/, '')}
                     </a>
                   </li>
@@ -160,7 +171,7 @@ export default function PrivacyPage() {
             {/* Sections */}
             <div className="space-y-10">
               {sections.map((s, i) => (
-                <div key={i} id={`section-${i}`} className="scroll-mt-24">
+                <div key={i} id={s.id || `section-${i}`} className="scroll-mt-24">
                   <h2 className="text-2xl font-bold mb-4 text-foreground">{s.title}</h2>
                   {s.content.split('\n\n').map((para, j) => (
                     <p key={j} className="text-muted-foreground leading-relaxed mb-4 whitespace-pre-line">{para}</p>

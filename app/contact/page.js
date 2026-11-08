@@ -13,7 +13,8 @@ const ContactPage = () => {
     phone: '',
     country: '',
     interest: '',
-    message: ''
+    message: '',
+    consent: false
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
@@ -42,7 +43,8 @@ const ContactPage = () => {
           phone: '',
           country: '',
           interest: '',
-          message: ''
+          message: '',
+          consent: false
         });
       } else {
         setSubmitStatus({ type: 'error', message: data.error || 'Something went wrong. Please try again.' });
@@ -317,6 +319,20 @@ const ContactPage = () => {
                     placeholder="Tell us about your requirements..."
                   />
                 </div>
+
+<label className="flex items-start gap-3 text-sm text-muted-foreground">
+                  <input
+                    type="checkbox"
+                    required
+                    checked={formData.consent}
+                    onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
+                    className="mt-1 h-4 w-4 flex-shrink-0"
+                  />
+                  <span>
+                    I agree that Flowitec may use the information I have provided to respond to my enquiry, as described in our{' '}
+                    <a href="/legal/privacy" target="_blank" rel="noopener noreferrer" className="text-primary underline">Privacy Policy</a>. *
+                  </span>
+                </label>
 
                 {submitStatus && (
                   <div className={`p-4 rounded-lg flex items-start gap-3 ${

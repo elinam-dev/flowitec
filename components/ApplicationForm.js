@@ -10,7 +10,8 @@ export default function ApplicationForm({ job }) {
     email: '',
     phone: '',
     position: job.title,
-    coverLetter: ''
+    coverLetter: '',
+    consent: false
   });
   const [cvFile, setCvFile] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -39,7 +40,7 @@ export default function ApplicationForm({ job }) {
 
       if (response.ok) {
         setSubmitStatus({ type: 'success', message: 'Application submitted successfully! We will review your application and contact you soon.' });
-        setFormData({ name: '', email: '', phone: '', position: job.title, coverLetter: '' });
+        setFormData({ name: '', email: '', phone: '', position: job.title, coverLetter: '', consent: false });
         setCvFile(null);
       } else {
         setSubmitStatus({ type: 'error', message: data.error || 'Something went wrong. Please try again.' });
@@ -134,6 +135,20 @@ export default function ApplicationForm({ job }) {
                     placeholder="Tell us why you're interested in this position..."
                   />
                 </div>
+
+<label className="flex items-start gap-3 text-sm text-muted-foreground">
+                  <input
+                    type="checkbox"
+                    required
+                    checked={formData.consent}
+                    onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
+                    className="mt-1 h-4 w-4 flex-shrink-0"
+                  />
+                  <span>
+                    I agree that Flowitec may use the information I have provided to assess my application, including my CV, as described in our{' '}
+                    <a href="/legal/privacy" target="_blank" rel="noopener noreferrer" className="text-primary underline">Privacy Policy</a>. *
+                  </span>
+                </label>
 
                 {submitStatus && (
                   <div className={`p-4 rounded-lg flex items-start gap-3 ${

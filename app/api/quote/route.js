@@ -14,8 +14,15 @@ export async function POST(request) {
       }, { status: 400 });
     }
 
+    if (body.consent !== true) {
+      return NextResponse.json({
+        error: 'Please accept the Privacy Policy to continue.'
+      }, { status: 400 });
+    }
+
     // Prepare email data
     const emailData = {
+      consentAt: new Date().toISOString(),
       name,
       email,
       phone,

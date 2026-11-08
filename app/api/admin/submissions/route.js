@@ -6,10 +6,10 @@ function isAuthorized(request) {
   const authHeader = request.headers.get('authorization');
   const token = process.env.ADMIN_API_TOKEN;
   
-  // If no token is set in env, allow access (for development)
+  // Submissions contain personal data, so deny access when no token is configured
   if (!token) {
-    console.warn('⚠️ ADMIN_API_TOKEN not set - admin API is open');
-    return true;
+    console.warn('⚠️ ADMIN_API_TOKEN not set - admin API is locked');
+    return false;
   }
   
   return authHeader === `Bearer ${token}`;

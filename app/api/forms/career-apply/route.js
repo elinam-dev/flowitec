@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
-import { sendEmail } from '@/lib/email';
+import { sendEmail, escapeHtml } from '@/lib/email';
+
+const MAX_CV_BYTES = 10 * 1024 * 1024;
+const ALLOWED_CV_EXTENSIONS = ['pdf', 'doc', 'docx'];
 import { saveSubmission } from '@/lib/db';
 
 export async function POST(request) {
@@ -12,6 +15,7 @@ export async function POST(request) {
     const position = formData.get('position');
     const coverLetter = formData.get('coverLetter');
     const cv = formData.get('cv');
+    const consent = formData.get('consent');
 
     // Validate required fields
     if (!name || !email || !position) {
@@ -20,8 +24,25 @@ export async function POST(request) {
       }, { status: 400 });
     }
 
+    if (consent !== 'true') {
+      return NextResponse.json({
+        error: 'Please accept the Privacy Policy to continue.'
+      }, { status: 400 });
+    }
+
+    if (cv) {
+      const ext = cv.name.split('.').pop().toLowerCase();
+      if (!ALLOWED_CV_EXTENSIONS.includes(ext)) {
+        return NextResponse.json({ error: 'CV must be a PDF or Word document.' }, { status: 400 });
+      }
+      if (cv.size > MAX_CV_BYTES) {
+        return NextResponse.json({ error: 'CV must be 10MB or smaller.' }, { status: 400 });
+      }
+    }
+
     // Prepare submission data
     const submissionData = {
+      consentAt: new Date().toISOString(),
       name,
       email,
       phone,
@@ -30,7 +51,7 @@ export async function POST(request) {
     };
 
     // Save submission to database
-    const cvFileName = cv ? `${Date.now()}-${cv.name}` : null;
+    const cvFileName = cv ? `${Date.now()}-${cv.name.replace(/[^\w.-]/g, '_')}` : null;
     const attachments = [];
     
     if (cv) {
@@ -69,22 +90,25 @@ export async function POST(request) {
           </div>
           <div class="content">
             <div class="field">
-              <span class="label">Name:</span> ${name}
+              <span class="label">Name:</span> ${escapeHtml(name)}
             </div>
             <div class="field">
-              <span class="label">Email:</span> ${email}
+              <span class="label">Email:</span> ${escapeHtml(email)}
             </div>
             <div class="field">
-              <span class="label">Phone:</span> ${phone || 'N/A'}
+              <span class="label">Phone:</span> ${phone ? escapeHtml(phone) : 'N/A'}
             </div>
             <div class="field">
-              <span class="label">Position:</span> ${position}
+              <span class="label">Position:</span> ${escapeHtml(position)}
             </div>
             <div class="field">
               <span class="label">Cover Letter:</span>
-              <p>${coverLetter ? coverLetter.replace(/\n/g, '<br>') : 'N/A'}</p>
+              <p>${coverLetter ? escapeHtml(coverLetter).replace(/\n/g, '<br>') : 'N/A'}</p>
             </div>
-            ${cv ? `<div class="field"><span class="label">CV Attached:</span> ${cvFileName}</div>` : ''}
+            ${cv ? `<div class="field"><span class="label">CV Attached:</span> ${escapeHtml(cvFileName)}</div>` : ''}
+            <div class="field">
+              <span class="label">Privacy consent:</span> Given ${submissionData.consentAt}
+            </div>
           </div>
         </div>
       </body>

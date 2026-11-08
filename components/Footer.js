@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Youtube, AlertCircle } from 'lucide-react';
 import { BRANCHES } from '@/lib/mockData';
+import CookieSettingsLink from '@/components/CookieSettingsLink';
 
 // Instagram icon component (not available in lucide-react)
 const InstagramIcon = ({ className }) => (
@@ -153,6 +154,7 @@ const Footer = () => {
               <Link href="/legal/terms" className="text-gray-400 hover:text-white transition-colors">
                 Terms of Service
               </Link>
+              <CookieSettingsLink className="text-gray-400 hover:text-white transition-colors" />
               <Link href="/quality" className="text-gray-400 hover:text-white transition-colors">
                 Quality & Certifications
               </Link>

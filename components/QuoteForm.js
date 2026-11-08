@@ -8,7 +8,8 @@ const QuoteForm = () => {
     email: '',
     phone: '',
     company: '',
-    message: ''
+    message: '',
+    consent: false
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -26,7 +27,7 @@ const QuoteForm = () => {
 
       if (response.ok) {
         setSubmitted(true);
-        setFormData({ name: '', email: '', phone: '', company: '', message: '' });
+        setFormData({ name: '', email: '', phone: '', company: '', message: '', consent: false });
       }
     } catch (error) {
       console.error('Error:', error);
@@ -102,6 +103,19 @@ const QuoteForm = () => {
           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
         />
       </div>
+      <label className="flex items-start gap-3 text-sm text-gray-600">
+        <input
+          type="checkbox"
+          required
+          checked={formData.consent}
+          onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
+          className="mt-1 h-4 w-4 flex-shrink-0"
+        />
+        <span>
+          I agree that Flowitec may use the information I have provided to prepare my quote, as described in our{' '}
+          <a href="/legal/privacy" target="_blank" rel="noopener noreferrer" className="text-primary underline">Privacy Policy</a>. *
+        </span>
+      </label>
       <button
         type="submit"
         disabled={isSubmitting}
